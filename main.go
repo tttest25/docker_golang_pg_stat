@@ -19,16 +19,16 @@ import (
 
 // Command-line flags.
 var (
-	httpAddr   = flag.String("addr", "0.0.0.0:8080", "Listen address")
+	httpAddr   = flag.String("addr", "localhost:9002", "Listen address")
 	pollPeriod = flag.Duration("poll", 5*time.Second, "Poll period")
-	version    = flag.String("version", "1.20", "Go version")
+	version    = flag.String("version", "1.22", "Go version")
 )
 
-const baseChangeURL = "https://go.googlesource.com/go/+/"
+const baseChangeURL = "https://go.googlesource.com/go/+/go"
 
 func main() {
 	flag.Parse()
-	changeURL := fmt.Sprintf("%sgo%s", baseChangeURL, *version)
+	changeURL := fmt.Sprintf("%s%s", baseChangeURL, *version)
 	http.Handle("/", NewServer(*version, changeURL, *pollPeriod))
 	log.Printf("serving http://%s", *httpAddr)
 	log.Fatal(http.ListenAndServe(*httpAddr, nil))

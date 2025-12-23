@@ -1,1 +1,5 @@
-This is a web server that announces whether or not a particular Go version has been tagged.
+# Goal
+
+this is is a web server on golang for postgres and svetle 
+
+## 
