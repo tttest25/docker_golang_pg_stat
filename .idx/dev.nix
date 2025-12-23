@@ -8,6 +8,9 @@
     pkgs.go
     pkgs.nodejs_20
     pkgs.nodePackages.nodemon
+    pkgs.postgresql_15
+    pkgs.docker
+    pkgs.docker-compose
   ];
   # Sets environment variables in the workspace
   env = {};
