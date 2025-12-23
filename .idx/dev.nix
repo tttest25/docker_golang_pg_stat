@@ -12,6 +12,10 @@
     pkgs.docker
     pkgs.docker-compose
   ];
+  services = {
+    docker.enable = true;
+    postgres.enable = true;
+  };
   # Sets environment variables in the workspace
   env = {};
   idx = {
