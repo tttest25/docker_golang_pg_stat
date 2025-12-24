@@ -51,6 +51,9 @@
         web = {
           command = ["backend/start.sh"];
           manager = "web";
+          env = {
+            PORT = "$PORT";
+          };
         };
       };
     };

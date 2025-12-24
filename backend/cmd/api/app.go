@@ -25,6 +25,9 @@ func main() {
 	router := http.NewServeMux()
 
 	// Register handlers
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "working")
+	})
 	router.HandleFunc("/users", handlers.GetUsers(db))
 	router.HandleFunc("/posts", handlers.GetPosts(db))
 
